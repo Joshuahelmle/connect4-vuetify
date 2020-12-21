@@ -1,20 +1,54 @@
 <template>
-<div class="lobby">
+<div class="lobby ma-6">
   <h1>Lobby</h1>
     <div class="container">
+        <div class="newGameContainer pt-6 mb-6"> 
+            <p class="ma-0">There are currently no open Games, be the first to start playing!</p><br>
+    <v-btn class="ml-16" color="primary"> Start new Game </v-btn>
+        <!-- <a href="/games/new">Start new Game</a> -->
+
+        </div>
    
-    <p>There are currently no open Games, be the first to start playing!</p><br>
-        <a href="/games/new">Start new Game</a>
-     
+    
         <p>
             These are the currently active games, join one if you want!<br>
             You can also create a <a href="/games/new">new</a> one.
         </p>
+        <v-card
+    max-width="344"
+    outlined
+    v-for="game in games"
+    :key="game.id"
+  >
+    <v-list-item two-line>
+      <v-list-item-content>
+          <v-list-item-title class="headline mb-1">
+              Game {{game.id + 1}}
+          </v-list-item-title>
+        <div>{{game.player1}}</div>
+        <div> {{game.player2}}</div>
+      </v-list-item-content>
+
+      <v-list-item-avatar
+        tile
+        size="80"
+        color="grey"
+      ></v-list-item-avatar>
+    </v-list-item>
+
+    <v-card-actions>
+      <v-btn
+        color="primary"
+      >
+        Join Game
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+        </div>
         <ul>
             <li v-for="game in games" :key="game.id">{{game.player1}} vs {{game.player2}}</li>
         </ul>  
     </div>
-</div>
 </template>
 
 <script>
