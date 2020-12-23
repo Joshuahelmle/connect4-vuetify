@@ -4,15 +4,11 @@
     <div class="container">
         <div class="newGameContainer pt-6 mb-6"> 
             <p class="ma-0">There are currently no open Games, be the first to start playing!</p><br>
-    <v-btn class="ml-16" color="primary"> Start new Game </v-btn>
-        <!-- <a href="/games/new">Start new Game</a> -->
+    <v-btn class="ml-16" color="primary" to="/newGame"> Start new Game </v-btn>
 
         </div>
-   
-    
         <p>
             These are the currently active games, join one if you want!<br>
-            You can also create a <a href="/games/new">new</a> one.
         </p>
         <v-card
     max-width="344"

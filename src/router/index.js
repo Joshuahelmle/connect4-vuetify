@@ -21,6 +21,14 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Rules.vue"),
   },
+  {
+    path: "/newGame",
+    name: "new Game",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/newGameForm.vue"),
+  },
+
+
 ];
 
 const router = new VueRouter({
