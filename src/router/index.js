@@ -25,10 +25,8 @@ const routes = [
     path: "/newGame",
     name: "new Game",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/newGameForm.vue"),
+      import(/* webpackChunkName: "about" */ "../views/NewGameForm.vue"),
   },
-
-
 ];
 
 const router = new VueRouter({
