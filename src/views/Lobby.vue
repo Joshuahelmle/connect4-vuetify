@@ -41,9 +41,6 @@
     </v-card-actions>
   </v-card>
         </div>
-        <ul>
-            <li v-for="game in games" :key="game.id">{{game.player1}} vs {{game.player2}}</li>
-        </ul>  
     </div>
 </template>
 
