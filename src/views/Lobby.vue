@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name : 'Lobby',
     data()  {
@@ -55,6 +56,7 @@ export default {
     },
     created: function () {
        this.getGames();
+       axios.get("http://localhost:9000/games/0/json").then(res => console.log(res)).catch(err => console.log(err));
     },
     methods : {
         getGames() {
