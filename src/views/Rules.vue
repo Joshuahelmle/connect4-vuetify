@@ -1,9 +1,9 @@
 <template>
 <div class="rules pa-6">
- <div class="header"><h1>Connect 4: Rules</h1></div>
+ <div class="header"><h1>Rules</h1></div>
     <div class="container"></div>
         <div id="overview">
-            <h2>Overview</h2>
+            <h2> <v-img class="img" src="../assets/connect4.jpg" max-height="10" max-width="10"> </v-img> Overview</h2>
             <p>
                 Connect 4 is a two player, turnbased strategy game.<br>
                 You and your opponent take turns filling up the game board with your tokens of your color.<br>
@@ -12,7 +12,7 @@
             </p>
         </div>
         <div id="turn">
-            <h2>Play a Turn</h2>
+            <h2> <v-img class="img" src="../assets/connect4.jpg" max-height="10" max-width="10"> </v-img> Play a Turn</h2>
             <p>
                 At the start of the Game each of you picks a color, you'll get 21 Tokens of that color to try and win the game with.<br>
                 If it's your turn you choose a Column to put in your token, the token then falls down until it either reaches the edge of the board or another Token<br>
@@ -21,7 +21,7 @@
             </p>
         </div>
         <div id="end">
-            <h2>End of Game</h2>
+            <h2> <v-img class="img" src="../assets/connect4.jpg" max-height="10" max-width="10"> </v-img>End of Game</h2>
             <p>
                 The Game ends as soon there is a consecutive row of 4 Tokens in the same color. This can happen either horizontally<br>
                     <img src="" alt="ADD HORIZONZAL WIN">
@@ -48,3 +48,13 @@ export default {
 }
 </script>
 
+
+<style>
+    h2 {
+        display: flex;
+    }
+
+    .img {
+        margin-right: 5px;
+    }
+</style>

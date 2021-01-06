@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+    <div class="container pa-6">
+       <h1>Welcome! </h1>
+       <h4>Please enter your names: </h4>
+       <v-form>
          <v-text-field
             placeholder="player1"
             label="Name"
@@ -14,8 +17,13 @@
             clearable
             filled
           ></v-text-field>
-          <v-btn to="/lobby"> Back to Lobby </v-btn>
-          <v-btn v-on:click="createGame()"> Start Game </v-btn>
+          <div class="button-container">
+          <v-btn class="btn" color="primary" to="/lobby"> <v-icon left>mdi-arrow-left</v-icon> Back to Lobby </v-btn>
+          <v-btn  color="primary" v-on:click="createGame()"> Start Game <v-icon >mdi-dice-multiple</v-icon> </v-btn>
+          </div>
+
+       </v-form>
+        
          </div>
 </template>
 
@@ -47,3 +55,30 @@ export default {
     }
 }
 </script>
+
+
+<style>
+    .container {
+        margin: auto;
+        position: absolute;
+        top:0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0; 
+        
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+
+    .v-text-field {
+        width: 50%;
+    }
+
+  
+
+
+
+</style>
+
