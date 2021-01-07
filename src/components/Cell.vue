@@ -1,5 +1,5 @@
 <template>
-    <div class="cell" v-bind:class="{unset : !set , red : color === 'red', yellow : color === 'yellow', scaled : needsScale}" ></div>
+    <div @click="setCell" @mouseenter="zoomIn" @mouseleave="zoomOut" class="cell" v-bind:class="{unset : !set , red : color === 'red', yellow : color === 'yellow', scaled : needsScale}" ></div>
 </template>
 
 <script>
@@ -13,24 +13,22 @@ export default {
         needsScale : Boolean
     },
     methods : {
-        zoomIn(color)  {
-            if(!this.set){
-                this.color = color;
-                this.needsScale = true;
-            }
+        zoomIn()  {
+            this.$emit('cell-zoomed-in', this.col);
         },
         zoomOut()  {
-            if(!this.set){
-                this.color = '';
-            }
-            this.needsScale = false;
+           this.$emit('cell-zoomed-out', this.col);
 
         },
-        set(val)  {
-            this.set = val;
+        setCell()  {
+            this.$emit('cell-clicked',this.col);
+            //this.setCol('red');
         },
         setCol(color) {
             this.color = color;
+        },
+        test(){
+            console.log('pressed');
         }
     }
 }
