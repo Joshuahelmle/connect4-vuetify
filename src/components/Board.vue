@@ -1,5 +1,6 @@
 
 <template>
+<div>
     <div class='board'>
         <div class ='boardrow' v-for="row in cells" v-bind:key="row.id">
         <cell v-for="cell in row"
@@ -9,6 +10,7 @@
          :id="`row-${cell.row}-col-${cell.col}`"
          :needsScale="cell.needsScale"
          :color="cell.color"
+         :needsPrev="cell.needsPrev"
          @cell-clicked="clicked"
          @cell-zoomed-out="zoomOut"
          @cell-zoomed-in="zoomIn"
@@ -16,6 +18,8 @@
         </div>
         
     </div>
+   
+</div>
     
 </template>
 
@@ -23,7 +27,9 @@
 <style>
 .board {
 
- 
+    background-image: url("~@/assets/wood_background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 10px solid #331A00;
 }
 
@@ -116,6 +122,7 @@ export default {
                 newRow[col].needsScale = true;
                 if(i === idx) {
                     newRow[col].color = this.json.players[this.json.currentPlayerIndex].color.color
+                    newRow[col].needsPrev = true;
                 }
                 this.$set(this.cells, i, newRow);
             }
@@ -129,6 +136,7 @@ export default {
                 newRow[col].needsScale = false;
                 if(i === idx) {
                     newRow[col].color = "";
+                    newRow[col].needsPrev = false;
                 }
                 this.$set(this.cells, i, newRow);
             }

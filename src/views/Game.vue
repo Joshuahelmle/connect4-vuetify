@@ -2,7 +2,6 @@
 <div class="game">
     <buttongroup @handle-click="handle"/>
     <board @col-clicked="play" @update-done="updated" :message="msg" />
-    <button @click="getJSON">Update</button>
 </div>
 </template>
 
